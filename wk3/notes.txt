@@ -1,0 +1,51 @@
+AWS 
+Compute services
+    EC2, Auto scaling, elastic load balancing
+    elastic compute services, predicts scaling for ec2, balances work over instances
+Network services   
+    VPC, Direct connect, Rout 53
+    isolated cloud, connects to private infrastructure, dns routing
+Storage services   
+    Amazon EBS, S3, Glacier, Storage Gateway
+    persistent block storage 4 EC2, stores incomming, archiving, interface local to galcier
+DB services
+    RDS, Dynamo, ElastiCache
+    SQL, No SQL, In memory
+Big Data services
+    EMR, Data Pipeline, Redshift
+    Elstic map resdce(query on big sets), process and move data between different AWS compute and storage services on-premises data sources at specified interval, predictive insights on data without movement or transformation
+App services
+    CloudFront, CloudSearch, Elastic Transcoder
+    distribute content globally, seach service, video transcoding
+Deployment and Admin services  
+    Cloud watch, IAM, CloudFormation, OpsWorks, Elasticbeanstalk
+    monitor performance changes optimize resource utilization, manage identities and access, manage resources across all AWS accounts, ervice that provides managed instances of Chef and Puppet,  service for deploying and scaling web applications and services, 
+
+
+Load balancers
+    Network layer -transport layer(layer4) ip addresses, not content    
+    App Layer - layer 7 read requests content based routing 
+        Elastic load balancing - increase fault tollerance by distributing requests across avalability zones
+
+Vertical scalability 
+    more powerful hardware
+Horizontal 
+    more instances
+
+Auto Scaling 
+    Scales in response to demand, configured by policy that defines factors (max size out, min size down, cpu utilization, memory usage, output)
+
+Elastic scalability
+    Requires real time monitoring, dynamic provisitoning
+
+
+
+We use Puppet do we use opt works, we use redis and couchbase do we use Key value stores, we use docker ane nginx do we use elastic beanstalk, we have crashes due to resource consumtion and it seems we have a fininte number of instances do we have auto scaling, in order to scale well you need policies do we have scaling policies, 
+
+NoSQL
+    Document DB (MongoDB, CouchDB)
+    Column DB (apache cassandra)
+    Key value stores (Redis, Couchbase)
+    Cache systems (Redis, Memcache)
+    Graph DB (Neo4J)
+
