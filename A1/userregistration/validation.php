@@ -1,27 +1,39 @@
 <?php
 
 session_start();
+require __DIR__ . '/vendor/autoload.php';
 
 
-$con = mysqli_connect('localhost','root', 'dividian' );
+ $name = $_POST['user'];
+ $pass= $_POST['password'];
+ $count = 0;
 
-mysqli_select_db($con,'userregistration');
+use Google\Cloud\BigQuery\BigQueryClient;
 
-$name = $_POST['user'];
-$pass= $_POST['password'];
+$projectId = 's3632442-jallybombo';
+		$client = new BigQueryClient([
+    			'projectId' => $projectId,
+		]);
+$query = "SELECT name,password FROM `credentials.users` WHERE name = '$name' and password = '$pass' LIMIT 1;";
+		$queryJobConfig = $client->query($query);
+		$queryResults = $client->runQuery($queryJobConfig);
+		$rows = $queryResults->rows();
 
-$s = " select * from users where name = '$name' && password = '$pass'";
+		foreach ($rows as $row)
+			{
+				foreach ($row as $field)
+				{
+					$count++;
+				}
+				}
 
-$result = mysqli_query($con, $s);
-
-$num = mysqli_num_rows($result);
-
-if($num == 1){
+if ($queryResults->isComplete()) {
+if($count > 0){
     $_SESSION['username'] = $name;
 header('location:home.php');
 }else{
     header('location:login.php');
 }
-
+}
 
 ?>

@@ -1,28 +1,41 @@
 <?php
 
 session_start();
+require __DIR__ . '/vendor/autoload.php';
 header('location:login.php');
-
-$con = mysqli_connect('localhost','root', 'dividian' );
-
-mysqli_select_db($con,'userregistration');
 
 $name = $_POST['user'];
 $pass= $_POST['password'];
 
-$s = " select * from users where name = '$name'";
+use Google\Cloud\BigQuery\BigQueryClient;
 
-$result = mysqli_query($con, $s);
+        $projectId = 's3632442-jallybombo';
+        $client = new BigQueryClient([
+                'projectId' => $projectId,
+        ]);
+ 
+$query = "SELECT name,password FROM `credentials.users` WHERE name = '$name' and password = '$pass' LIMIT 1;";
+        $queryJobConfig = $client->query($query);
+        $queryResults = $client->runQuery($queryJobConfig);
+        $rows = $queryResults->rows();
 
-$num = mysqli_num_rows($result);
+        foreach ($rows as $row)
+            {
+                foreach ($row as $field)
+                {
+                    $count++;
+                }
+                }
 
-if($num == 1){
+if ($queryResults->isComplete()) {
+if($count > 0){
 echo "username already taken";
 }else{
-    $reg= " insert into users(name , password) values ('$name', '$pass')";
-    mysqli_query($con, $reg);
+    $mutation = "INSERT INTO `credentials.users` (name, password) values ('$name', '$pass');";
+    $queryJobConfig = $client->query($mutation);
+    $queryResults = $client->runQuery($queryJobConfig);
     echo" Registration Successful";
 }
-
+}
 
 ?>
