@@ -1,5 +1,0 @@
-{
-  "yaml.schemas": {
-    "https://gitlab.com/appsemble/appsemble/-/raw/HEAD/packages/cli/assets/appsemblerc.schema.json": "file:///home/booz/dev/rmit/cloudComputing/wk2/login-app/login-app/app.yaml"
-  }
-}

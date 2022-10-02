@@ -42,11 +42,10 @@ use Google\Cloud\Storage\StorageClient;
       </div>
       <div>
         <input type="submit" value="Submit">
-        <form action="https://www.google.com">
-    <input type="submit" value="Register" />
-</form>
+        
 
       </div>
     </form>
-  </body>
+<a class="float-right" href="register.php">Register!</a>
+      </body>
 </html>

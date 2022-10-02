@@ -15,10 +15,13 @@ switch (@parse_url($_SERVER['REQUEST_URI'])['path']){
 		require 'home.php';
 		break;
 	case '/':
-		require 'home.php';
+		require 'index.php';
 		break;
 	case '/logout.php':
 		require 'logout.php';
+		break;
+	case '/signup.php':
+		require 'signup.php';
 		break;
 	default :
 		http_response_code(404);
