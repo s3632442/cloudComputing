@@ -14,7 +14,7 @@ use Google\Cloud\BigQuery\BigQueryClient;
                 'projectId' => $projectId,
         ]);
  
-$query = "SELECT name,password FROM `credentials.users` WHERE name = '$name' and password = '$pass' LIMIT 1;";
+$query = "SELECT id, name,password FROM `credentials.users` WHERE id = '$id' and name = '$name' and password = '$pass' LIMIT 1;";
         $queryJobConfig = $client->query($query);
         $queryResults = $client->runQuery($queryJobConfig);
         $rows = $queryResults->rows();
@@ -31,7 +31,7 @@ if ($queryResults->isComplete()) {
 if($count > 0){
 echo "username already taken";
 }else{
-    $mutation = "INSERT INTO `credentials.users` (name, password) values ('$name', '$pass');";
+    $mutation = "INSERT INTO `credentials.users` (id, name, password) values ('$id', '$name', '$pass');";
     $queryJobConfig = $client->query($mutation);
     $queryResults = $client->runQuery($queryJobConfig);
     echo" Registration Successful";
