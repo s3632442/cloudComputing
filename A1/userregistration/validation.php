@@ -14,7 +14,7 @@ $projectId = 's3632442-jallybombo';
 		$client = new BigQueryClient([
     			'projectId' => $projectId,
 		]);
-$query = "SELECT id,password FROM `credentials.users` WHERE name = '$id' and password = '$pass' LIMIT 1;";
+$query = "SELECT name,password FROM `credentials.users` WHERE name = '$name' and password = '$pass' LIMIT 1;";
 		$queryJobConfig = $client->query($query);
 		$queryResults = $client->runQuery($queryJobConfig);
 		$rows = $queryResults->rows();
@@ -32,8 +32,6 @@ if($count > 0){
     $_SESSION['username'] = $name;
 header('location:home.php');
 }else{
-	$msg = "ID or password is invalid";
-	$_SESSION['msg'] = $msg;
     header('location:login.php');
 }
 }

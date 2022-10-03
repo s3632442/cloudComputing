@@ -19,23 +19,27 @@ use Google\Cloud\BigQuery\BigQueryClient;
         $queryJobConfig = $client->query($query);
         $queryResults = $client->runQuery($queryJobConfig);
         $rows = $queryResults->rows();
+        $row = $rows->row();
 
         foreach ($rows as $row)
             {
                 foreach ($row as $field)
                 {
+                    
                     $count++;
                 }
                 }
 
 if ($queryResults->isComplete()) {
 if($count > 0){
-    if($rows[0] == $id && $rows[1] != $name){
-        $msg = "The ID already exists";
-    }
-    if($rows[0] != $id && $rows[1] == $name){
-        $msg = "The username already exists";
-    }
+    // if($row[0] == $id && $row[1] != $name){
+    //     $msg = "The ID already exists";
+    // }
+    // if($row[0] != $id && $row[1] == $name){
+    //     $msg = "The username already exists";
+    // }
+
+    $msg = "The username already exists or The ID already exists";
 	
 }else{
     $mutation = "INSERT INTO `credentials.users` ( id, name, password) values ('$id', '$name', '$pass');";

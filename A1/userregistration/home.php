@@ -20,7 +20,8 @@ if(!isset($_SESSION['username'])){
 
 <div class="container">
     <a class="float-right" href="logout.php">LOG OUT!</a>
-   <h1>WELCOME <?php echo $_SESSION['username'];?></h1>
+   <h1>WELCOME </h1>
+   USER PAGE -><a href="userpage.php"><?php echo $_SESSION['username'];?></a>
 </div>
 <div class="float-right">
 <?php if (array_key_exists('content', $_POST)) {
