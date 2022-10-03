@@ -19,6 +19,25 @@ if(!isset($_SESSION['username'])){
 <div class="container">
     <a class="float-right" href="logout.php">LOG OUT!</a>
    <h1>WELCOME <a href="userpage.php"> <?php echo $_SESSION['username'];?></a> </h1>
+   <h2>Message Board</2>
+
+   <?php if (array_key_exists('content', $_POST)) {
+    echo "You wrote:<pre>\n";
+    echo htmlspecialchars($_POST['content']);
+    echo "\n</pre>";
+  }
+
+?>
+</div>
+<form action="home.php" method="post">
+      <div>Write something
+        <textarea name="content" rows="3" cols="60"></textarea>  
+      </div>
+      <div>
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+
 </div>
 
 
