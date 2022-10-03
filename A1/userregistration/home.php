@@ -4,6 +4,8 @@ session_start();
 if(!isset($_SESSION['username'])){
     header('location:login.php');
 }
+
+
 ?>
 
 
@@ -18,12 +20,27 @@ if(!isset($_SESSION['username'])){
 
 <div class="container">
     <a class="float-right" href="logout.php">LOG OUT!</a>
-   <h1>WELL CUM <?php echo $_SESSION['username'];?></h1>
+   <h1>WELCOME <?php echo $_SESSION['username'];?></h1>
 </div>
+<div class="float-right">
+<?php if (array_key_exists('content', $_POST)) {
+    echo "You wrote:<pre>\n";
+    echo htmlspecialchars($_POST['content']);
+    echo "\n</pre>";
+  }
+
+?>
+</div>
+<form action="home.php" method="post">
+      <div>Write something
+        <textarea name="content" rows="3" cols="60"></textarea>  
+      </div>
+      <div>
+        <input type="submit" value="Submit">
+      </div>
+    </form>
 
 
 </body>
 </html>
     
-
-

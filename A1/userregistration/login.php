@@ -1,3 +1,13 @@
+<?php
+
+session_start();
+if(!isset($_SESSION['msg'])){
+    $msg = "";
+	$_SESSION['msg'] = $msg;
+}
+
+
+?>
 <html>
     <head>
         <title> User Login And Registration </title>
@@ -11,14 +21,11 @@
             <div class = "row">
                 <div class = "col-md-6 login-left">
                     <h2>Login Here</h2>
+                    <h3><?php echo $_SESSION['msg'];?></h3>
                     <form action = "validation.php " method="post">
                     <div class="form-group">
                         <label>ID</label>
                         <input type="text" name="id" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>PASSWORD</label>
-                        <input type="text" name="user" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label>Password</label>
@@ -32,4 +39,10 @@
     </div>
 </body>
 </html>
+<?php
+
+    $msg = "";
+	$_SESSION['msg'] = $msg;
+
+?>
     
