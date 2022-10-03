@@ -1,3 +1,11 @@
+<?php
+
+session_start();
+
+if(!isset($_SESSION['msg'])){
+$_SESSION['msg'] = "";
+};
+?>
 <html>
     <head>
         <title> User Login And Registration </title>
@@ -11,6 +19,7 @@
         <div class = "row">
             <div class = "col-md-6 login-right">
                 <h2>Register Here</h2>
+                <h3><?php echo $_SESSION['msg'];?></h3>
                 <form action = "registration.php " method="post">
                     <div class="form-group">
                         <label>ID</label>
@@ -31,5 +40,9 @@
     </div>
 </body>
 </html>
-    
+<?php
+$_SESSION['msg'] = "";
+?>    
+
+   
 

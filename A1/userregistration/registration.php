@@ -30,7 +30,8 @@ $query = "SELECT name FROM `credentials_1.users` WHERE uid = '$uid' and name = '
 
 if ($queryResults->isComplete()) {
 if($count > 0){
-echo "username already taken";
+    $_SESSION['msg'] = "user exists already";
+    header('location:signup.php');
 }else{
     $mutation = "INSERT INTO `credentials_1.users` (uid, name, password) values ('$uid', '$name', '$pass');";
     $queryJobConfig = $client->query($mutation);
