@@ -14,6 +14,9 @@ switch (@parse_url($_SERVER['REQUEST_URI'])['path']){
 	case '/home.php':
 		require 'home.php';
 		break;
+	case '/index.php':
+		require 'index.php';
+		break;
 	case '/':
 		require 'index.php';
 		break;

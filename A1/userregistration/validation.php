@@ -4,8 +4,9 @@ session_start();
 require __DIR__ . '/vendor/autoload.php';
 
 
- $name = $_POST['user'];
- $pass= $_POST['password'];
+$uid = $_POST['uid'];
+$name = $_POST['user'];
+$pass= $_POST['password'];
  $count = 0;
 
 use Google\Cloud\BigQuery\BigQueryClient;
@@ -14,7 +15,7 @@ $projectId = 's3632442-jallybombo';
 		$client = new BigQueryClient([
     			'projectId' => $projectId,
 		]);
-$query = "SELECT name,password FROM `credentials.users` WHERE name = '$name' and password = '$pass' LIMIT 1;";
+$query = "SELECT name,password FROM `credentials_1.users` WHERE name = '$name' and password = '$pass' LIMIT 1;";
 		$queryJobConfig = $client->query($query);
 		$queryResults = $client->runQuery($queryJobConfig);
 		$rows = $queryResults->rows();

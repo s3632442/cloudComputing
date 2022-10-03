@@ -14,10 +14,10 @@
                 <form action = "registration.php " method="post">
                     <div class="form-group">
                         <label>ID</label>
-                        <input type="text" name="id" class="form-control" required>
+                        <input type="text" name="uid" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label>PASSWORD</label>
+                        <label>Name</label>
                         <input type="text" name="user" class="form-control" required>
                     </div>
                     <div class="form-group">
