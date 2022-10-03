@@ -18,7 +18,7 @@ if(!isset($_SESSION['username'])){
 
 <div class="container">
     <a class="float-right" href="logout.php">LOG OUT!</a>
-   <h1>WELL CUM <?php echo $_SESSION['username'];?></h1>
+   <h1>WELCOME <a href="userpage.php"> <?php echo $_SESSION['username'];?></a> </h1>
 </div>
 
 
