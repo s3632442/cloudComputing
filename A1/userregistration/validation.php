@@ -33,6 +33,7 @@ if($count > 0){
     $_SESSION['username'] = $name;
 header('location:home.php');
 }else{
+	$_SESSION['msg'] = "Invalid Credentials";
     header('location:login.php');
 }
 }
