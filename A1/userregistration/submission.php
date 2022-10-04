@@ -23,8 +23,7 @@ $projectId = 's3632442-jallybombo';
 if ($queryResults->isComplete()) {
     
 
-$name = "";
-$pass= "";
+
 header('location:home.php');
     }else{
         $_SESSION['msg'] = "Message did not send";
