@@ -31,6 +31,7 @@ $query = "SELECT name,password FROM `credentials_1.users` WHERE name = '$name' a
 if ($queryResults->isComplete()) {
 if($count > 0){
     $_SESSION['username'] = $name;
+	$_SESSION['uid'] = $uid;
 header('location:home.php');
 }else{
 	$_SESSION['msg'] = "Invalid Credentials";
