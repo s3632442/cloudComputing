@@ -4,6 +4,7 @@ session_start();
 require __DIR__ . '/vendor/autoload.php';
 
 
+$msgId = $_SESSION['count'];
 $uid = $_SESSION['uid'];
 $name = $_SESSION['username'];
 $subject = $_POST['subject'];
@@ -17,7 +18,7 @@ $projectId = 's3632442-jallybombo';
 		$client = new BigQueryClient([
     			'projectId' => $projectId,
 		]);
-        $mutation = "INSERT INTO `credentials_1.messages_1` (msgId, uid, name,subject, message) values (0, '123', '$name', '$subject', '$message');";
+        $mutation = "INSERT INTO `credentials_1.messages_1` (msgId, uid, name,subject, message) values (0, '$uid', '$name', '$subject', '$message');";
         $queryJobConfig = $client->query($mutation);
         $queryResults = $client->runQuery($queryJobConfig);
 

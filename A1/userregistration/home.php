@@ -32,13 +32,13 @@ $count = 0;
 		$client = new BigQueryClient([
     			'projectId' => $projectId,
 		]);
-		$query = "SELECT uid, name, subject, message FROM `credentials_1.messages_1`;";
+		$query = "SELECT uid, name, subject, message, msgId FROM `credentials_1.messages_1` ORDER BY msgId DESC;";
 		$queryJobConfig = $client->query($query);
 		$queryResults = $client->runQuery($queryJobConfig);
 
 		$str = "<table>".
 		"<tr>" .
-		"<th>ID</th>" .
+		"<th>uid</th>" .
         "<th>name</th>" .
 		"<th>subject</th>" .
 		"<th>Message</th>" .
