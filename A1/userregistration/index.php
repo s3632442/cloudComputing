@@ -1,9 +1,6 @@
 <?php
-
 session_start();
-
 ?>
-
 
 <html>
     <head>
@@ -19,7 +16,6 @@ session_start();
     <a class="float-right" href="signup.php">SIGN UP!</a>
    <h1>WELCOME </h1>
 </div>
-
 
 </body>
 </html>

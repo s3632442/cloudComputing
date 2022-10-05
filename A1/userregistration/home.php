@@ -1,12 +1,14 @@
 <?php
-
 session_start();
 require __DIR__ . '/vendor/autoload.php';
 if(!isset($_SESSION['username'])){
     header('location:login.php');
 }
+if(!isset($_SESSION['msg'])){
+    $_SESSION['msg'] = "";
+}
+$count = 0;
 ?>
-
 
 <html>
     <head>
@@ -30,13 +32,14 @@ if(!isset($_SESSION['username'])){
 		$client = new BigQueryClient([
     			'projectId' => $projectId,
 		]);
-		$query = "SELECT name, subject, message FROM `credentials_1.messages`;";
+		$query = "SELECT uid, name, subject, message FROM `credentials_1.messages_1`;";
 		$queryJobConfig = $client->query($query);
 		$queryResults = $client->runQuery($queryJobConfig);
 
 		$str = "<table>".
 		"<tr>" .
 		"<th>ID</th>" .
+        "<th>name</th>" .
 		"<th>subject</th>" .
 		"<th>Message</th>" .
 		"</tr>";
@@ -51,6 +54,7 @@ if(!isset($_SESSION['username'])){
 				foreach ($row as $field)
 				{
 					$str .= "<td>" . $field . "</td>";
+                    $count++;
 				}
 				$str .= "</tr>";
 			}
@@ -61,6 +65,8 @@ if(!isset($_SESSION['username'])){
 		$str .= '</table></div>';
 
 		echo $str;
+        $count++;
+        $_SESSION['count'] = $count;
 	?>
 	</div>
    
@@ -86,9 +92,5 @@ if(!isset($_SESSION['username'])){
         </div>
     </div>
 
-
 </body>
 </html>
-    
-
-

@@ -1,8 +1,6 @@
 <?php
-
 session_start();
 require __DIR__ . '/vendor/autoload.php';
-
 
 $uid = $_POST['uid'];
 $name = $_POST['user'];
@@ -38,5 +36,4 @@ header('location:home.php');
     header('location:login.php');
 }
 }
-
 ?>
