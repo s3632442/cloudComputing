@@ -36,7 +36,6 @@ if($count > 0){
     $mutation = "INSERT INTO `credentials_1.users` (uid, name, password) values ('$uid', '$name', '$pass');";
     $queryJobConfig = $client->query($mutation);
     $queryResults = $client->runQuery($queryJobConfig);
-    echo" Registration Successful";
 }
 }
 

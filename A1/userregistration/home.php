@@ -54,9 +54,10 @@ $count = 0;
 				foreach ($row as $field)
 				{
 					$str .= "<td>" . $field . "</td>";
-                    $count++;
+                    
 				}
 				$str .= "</tr>";
+                $count++;
 			}
 		} else {
 			throw new Exception('The query failed to complete');

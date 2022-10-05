@@ -26,7 +26,7 @@ $_SESSION['msg'] = "";
                         <input type="text" name="uid" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label>PASSWORD</label>
+                        <label>Username</label>
                         <input type="text" name="user" class="form-control" required>
                     </div>
                     <div class="form-group">
