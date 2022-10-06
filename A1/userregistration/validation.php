@@ -24,7 +24,7 @@ $query = "SELECT name,password FROM `credentials_1.users` WHERE name = '$name' a
 				{
 					$count++;
 				}
-				}
+			}
 
 if ($queryResults->isComplete()) {
 if($count > 0){
@@ -37,3 +37,11 @@ header('location:home.php');
 }
 }
 ?>
+   				<!-- if((strcmp($field,$name)==0)&&(strcmp($field,$uid)!=0)){
+                        $_SESSION['msg'] = "The username already exists";
+                    }
+                    if((strcmp($field,$name)!=0)&&(strcmp($field,$uid)==0)){
+                        $_SESSION['msg'] = "The ID already exists";
+                    }
+                    
+                } -->
