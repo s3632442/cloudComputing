@@ -9,7 +9,7 @@ $uid = $_SESSION['uid'];
 $name = $_SESSION['username'];
 $subject = $_POST['subject'];
 $message= $_POST['message'];
-$count = 0;
+$count = $_SESSION['msgId'];;
 
  
 $con = mysqli_connect('localhost','root', 'dividian'  );
@@ -17,7 +17,7 @@ $con = mysqli_connect('localhost','root', 'dividian'  );
 mysqli_select_db($con,'phpforum');
 
 
-$s = "INSERT INTO `messages`(`uid`, `msgId`, `subject`, `message`) VALUES ('$msgId','$name','$subject','$message');";
+$s = "INSERT INTO `messages`(`uid`, `msgId`, `subject`, `message`) VALUES ('$uid','$msgId','$subject','$message');";
 
 $result = mysqli_query($con, $s);
 
@@ -42,7 +42,6 @@ if ($count > $msgId) {
     $_SESSION['msg'] = "Message Posted";
     header('location:messageboard.php');
 
-header('location:messageboard.php');
     }else{
         $_SESSION['msg'] = "Message not Posted";
         header('location:messageboard.php');

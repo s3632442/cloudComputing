@@ -34,22 +34,22 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
                 
-        $s = "SELECT * FROM `messages`;";
+        $s = "SELECT * FROM `messages` ORDER BY msgId DESC LIMIT 10;";
         
         $result = $conn->query($s);
 
 		if ($result->num_rows > 0) {
             // output data of each row
             while($row = $result->fetch_assoc()) {
-              echo "id: " . $row["msgId"]. " - Name: " . $row["uid"]. " " . $row["subject"]. " " . $row["message"]. "<br>";
+              echo "id: " . $row["uid"]. " - Subject: " . $row["subject"]. "Message: " . $row["message"]. "<br>";
               $count++;
             }
           } else {
             echo "0 results";
           }
         
-        
-        $_SESSION['count'] = $count;
+          $count++;
+        $_SESSION['msgId'] = $count;
 	?>
    
 <div class = "container">
