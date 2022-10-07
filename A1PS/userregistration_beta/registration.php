@@ -8,9 +8,14 @@ $uid = $_POST['uid'];
 $pass= $_POST['password'];
 $pass= $_POST['user'];
 
-$con = mysqli_connect('localhost','root', 'dividian'  );
+$dbuser = getenv('CLOUDSQL_USER');
+$dbpass = getenv('CLOUDSQL_PASSWORD');
+$dbinst = getenv('CLOUDSQL_DSN');
+$db = getenv('CLOUDSQL_DB');
 
-mysqli_select_db($con,'phpforum');
+
+		// Create connection
+$con = new mysqli_connect(null, $dbuser, $dbpass, $db, null, $dbinst);
 
 
 $s = " select * from users where uid = '$uid'";

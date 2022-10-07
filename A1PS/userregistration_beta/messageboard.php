@@ -27,8 +27,15 @@ $count = 0;
    <h2>Message Board</2>
    <div class='content'>
    <?php
+
+$dbuser = getenv('CLOUDSQL_USER');
+$dbpass = getenv('CLOUDSQL_PASSWORD');
+$dbinst = getenv('CLOUDSQL_DSN');
+$db = getenv('CLOUDSQL_DB');
+
+
 		// Create connection
-$conn = new mysqli('localhost', 'root', 'dividian', 'phpforum');
+$con = new mysqli_connect(null, $dbuser, $dbpass, $db, null, $dbinst);
 // Check connection
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);

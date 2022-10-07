@@ -12,9 +12,14 @@ $message= $_POST['message'];
 $count = $_SESSION['msgId'];;
 
  
-$con = mysqli_connect('localhost','root', 'dividian'  );
+$dbuser = getenv('CLOUDSQL_USER');
+$dbpass = getenv('CLOUDSQL_PASSWORD');
+$dbinst = getenv('CLOUDSQL_DSN');
+$db = getenv('CLOUDSQL_DB');
 
-mysqli_select_db($con,'phpforum');
+
+		// Create connection
+$con = new mysqli_connect(null, $dbuser, $dbpass, $db, null, $dbinst);
 
 
 $s = "INSERT INTO `messages`(`uid`, `msgId`, `subject`, `message`) VALUES ('$uid','$msgId','$subject','$message');";

@@ -1,7 +1,5 @@
 runtime: php74
 
-entrypoint: serve handler.php
-
 handlers:
 # Serve a directory as a static resource.
 - url: /stylesheets
@@ -9,10 +7,19 @@ handlers:
 
 
 # Serve images as static resources.
-- url: /(.+\.(gif|png|jpg))$
+- url: /(.+\.(gif|png|jpg|css))$
   static_files: \1
-  upload: .+\.(gif|png|jpg)$
+  upload: .+\.(gif|png|jpg|css)$
 
 # Serve your app through a front controller at index.php or public/index.php.
 - url: .*
   script: auto
+
+entrypoint: 
+  serve handler.php
+
+env_variables:
+  CLOUDSQL_USER: root
+  CLOUDSQL_DB: phpforum
+  CLOUDSQL_PASSWORD: dividian
+  CLOUDSQL_DSN: /cloudsql/s3632442-jallybombo:us-central1:forumapp

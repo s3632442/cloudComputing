@@ -7,9 +7,14 @@ $name = $_POST['user'];
 $pass= $_POST['password'];
  $count = 0;
 
- $con = mysqli_connect('localhost','root', 'dividian'  );
-
- mysqli_select_db($con,'phpforum');
+ $dbuser = getenv('CLOUDSQL_USER');
+ $dbpass = getenv('CLOUDSQL_PASSWORD');
+ $dbinst = getenv('CLOUDSQL_DSN');
+ $db = getenv('CLOUDSQL_DB');
+ 
+ 
+         // Create connection
+ $con = new mysqli_connect(null, $dbuser, $dbpass, $db, null, $dbinst);
  
  
  $s = " select * from users where uid = '$uid' and password = '$pass'";
