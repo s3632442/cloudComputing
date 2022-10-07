@@ -22,7 +22,7 @@ $pass= $_POST['password'];
 if($num > 0){
     $_SESSION['username'] = $name;
 	$_SESSION['uid'] = $uid;
-header('location:home.php');
+header('location:messageboard.php');
 }else{
 	$_SESSION['msg'] = "Invalid Credentials";
     header('location:login.php');

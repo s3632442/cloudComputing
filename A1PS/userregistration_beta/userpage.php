@@ -18,7 +18,7 @@ if(!isset($_SESSION['username'])){
 
 <div class="container">
     <a class="float-right" href="logout.php">LOG OUT!</a>
-    <a class="float-right" href="home.php">HOME!</a>
+    <a class="float-right" href="messageboard.php">HOME!</a>
    <h1>USER PAGE  </h1>
 </div>
 
