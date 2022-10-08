@@ -5,6 +5,8 @@ session_start();
 if(!isset($_SESSION['msg'])){
 $_SESSION['msg'] = "";
 };
+$count = 0;
+$uid = $_SESSION['uid'];
 ?>
 <html>
     <head>
@@ -14,6 +16,43 @@ $_SESSION['msg'] = "";
 </head>
 <body>
 <a class="float-right" href="index.php">HOME</a>
+<p><p\>
+<?php
+
+// $dbuser = getenv('CLOUDSQL_USER');
+// $dbpass = getenv('CLOUDSQL_PASSWORD');
+// $dbinst = getenv('CLOUDSQL_DSN');
+// $db = getenv('CLOUDSQL_DB');
+
+$dbuser = 'root';
+$dbpass = 'dividian';
+$dbinst = '/cloudsql/s3632442-jallybombo:us-central1:forumapp';
+$db = 'phpforum';
+
+
+
+		// Create connection
+    $con = new mysqli(null, $dbuser, $dbpass, $db, null, $dbinst);
+            
+    $s = "select * from messages where uid = '$uid' ORDER BY msgId DESC LIMIT 10";
+        
+        $result = $con->query($s);
+
+
+        
+		if ($result->num_rows > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+              echo "id: " . $row["uid"]. " - Subject: " . $row["subject"]. "Message: " . $row["message"]. "<br>";
+              $count++;
+            }
+          } else {
+            echo "0 results";
+          }
+        
+          $count++;
+        $_SESSION['msgId'] = $count;
+	?>
     <div class = "container">
         <div class="login-box">
         <div class = "row">
