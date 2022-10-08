@@ -41,12 +41,8 @@ $db = 'phpforum';
 
 
 		// Create connection
-$con = new mysqli(null, $dbuser, $dbpass, $db, null, $dbinst);
-// Check connection
-if ($con->connect_error) {
-  die("Connection failed: " . $con->connect_error);
-}
-                
+    $con = new mysqli(null, $dbuser, $dbpass, $db, null, $dbinst);
+            
         $s = "SELECT * FROM `messages` ORDER BY msgId DESC LIMIT 10;";
         
         $result = $con->query($s);
@@ -87,3 +83,6 @@ if ($con->connect_error) {
 
 </body>
 </html>
+<?php
+$_SESSION['msg'] = "";
+?>    

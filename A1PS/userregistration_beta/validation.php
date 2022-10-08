@@ -37,13 +37,3 @@ header('location:messageboard.php');
 	$_SESSION['msg'] = "Invalid Credentials";
     header('location:login.php');
 }
-
-?>
-   				<!-- if((strcmp($field,$name)==0)&&(strcmp($field,$uid)!=0)){
-                        $_SESSION['msg'] = "The username already exists";
-                    }
-                    if((strcmp($field,$name)!=0)&&(strcmp($field,$uid)==0)){
-                        $_SESSION['msg'] = "The ID already exists";
-                    }
-                    
-                } -->
