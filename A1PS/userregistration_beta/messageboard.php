@@ -28,23 +28,29 @@ $count = 0;
    <div class='content'>
    <?php
 
-$dbuser = getenv('CLOUDSQL_USER');
-$dbpass = getenv('CLOUDSQL_PASSWORD');
-$dbinst = getenv('CLOUDSQL_DSN');
-$db = getenv('CLOUDSQL_DB');
+// $dbuser = getenv('CLOUDSQL_USER');
+// $dbpass = getenv('CLOUDSQL_PASSWORD');
+// $dbinst = getenv('CLOUDSQL_DSN');
+// $db = getenv('CLOUDSQL_DB');
+
+$dbuser = 'root';
+$dbpass = 'dividian';
+$dbinst = '/cloudsql/s3632442-jallybombo:us-central1:forumapp';
+$db = 'phpforum';
+
 
 
 		// Create connection
-$con = new mysqli_connect(null, $dbuser, $dbpass, $db, null, $dbinst);
+$con = new mysqli(null, $dbuser, $dbpass, $db, null, $dbinst);
 // Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+if ($con->connect_error) {
+  die("Connection failed: " . $con->connect_error);
 }
                 
         $s = "SELECT * FROM `messages` ORDER BY msgId DESC LIMIT 10;";
         
-        $result = $conn->query($s);
-
+        $result = $con->query($s);
+        
 		if ($result->num_rows > 0) {
             // output data of each row
             while($row = $result->fetch_assoc()) {

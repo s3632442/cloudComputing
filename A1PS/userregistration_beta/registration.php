@@ -8,19 +8,26 @@ $uid = $_POST['uid'];
 $pass= $_POST['password'];
 $pass= $_POST['user'];
 
-$dbuser = getenv('CLOUDSQL_USER');
-$dbpass = getenv('CLOUDSQL_PASSWORD');
-$dbinst = getenv('CLOUDSQL_DSN');
-$db = getenv('CLOUDSQL_DB');
+// $dbuser = getenv('CLOUDSQL_USER');
+// $dbpass = getenv('CLOUDSQL_PASSWORD');
+// $dbinst = getenv('CLOUDSQL_DSN');
+// $db = getenv('CLOUDSQL_DB');
+
+
+$dbuser = 'root';
+$dbpass = 'dividian';
+$dbinst = '/cloudsql/s3632442-jallybombo:us-central1:forumapp';
+$db = 'phpforum';
+
 
 
 		// Create connection
-$con = new mysqli_connect(null, $dbuser, $dbpass, $db, null, $dbinst);
+$con = new mysqli(null, $dbuser, $dbpass, $db, null, $dbinst);
 
 
 $s = " select * from users where uid = '$uid'";
 
-$result = mysqli_query($con, $s);
+$result = $con->query($s);
 
 $num = mysqli_num_rows($result);
 
