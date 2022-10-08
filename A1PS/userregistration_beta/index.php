@@ -10,7 +10,6 @@ session_start();
         
 </head>
 <body>
-
 <div class="container">
 <a class="float-right" href="login.php">LOG IN!</a>
     <a class="float-right" href="signup.php">SIGN UP!</a>

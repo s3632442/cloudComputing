@@ -14,6 +14,37 @@ $_SESSION['msg'] = "";
 </head>
 <body>
 <a class="float-right" href="index.php">HOME</a>
+<?php
+    $dbuser = 'root';
+    $dbpass = 'dividian';
+    $dbinst = '/cloudsql/s3632442-jallybombo:us-central1:forumapp';
+    $db = 'phpforum';
+    
+    
+    
+            // Create connection
+        $con = new mysqli(null, $dbuser, $dbpass, $db, null, $dbinst);
+         
+
+    $s = "SELECT * FROM `users`;";
+        
+    $result = $con->query($s);
+    
+    if ($result->num_rows > 0) {
+        // output data of each row
+        echo "<table><tr><th>ID</th><th>Name</th></tr>";
+        while($row = $result->fetch_assoc()) {             
+          echo "<tr><td>".$row["uid"]."</td><td>".$row["name"]." ".$row["password"]."</td></tr>";
+          
+          }
+          
+          echo "</table>";
+          
+        }
+       else {
+        echo "0 results";
+      }
+?>
     <div class = "container">
         <div class="login-box">
         <div class = "row">

@@ -2,6 +2,7 @@ body{
     background: linear-gradient(rgba(0,0,50,0.5),rgba(0,0,50,0.5)),url(image.jpg);
     background-size: cover;
     background-position: center;
+    
 }
 .login-box{
 max-width: 700px;
@@ -11,11 +12,13 @@ margin: 150px auto;
 }
 
 .login-left{
+    color: #fff !important;
     background:rgba(211,211,211, 0.5);
     padding: 30px;
 }
 
 .login-right{
+    color: #fff !important;
     background:rgba(211,211,211, 0.5);
     padding: 30px;
 }
@@ -34,4 +37,22 @@ h1{
     margin-top: 20px !important;
     text-align: center;
     text-transform: uppercase;
+}
+
+h2{
+    color: #fff !important;
+    margin-top: 20px !important;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h3{
+    color: #fff !important;
+    margin-top: 20px !important;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+table{
+    color: #fff !important;
 }

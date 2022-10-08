@@ -6,7 +6,7 @@ session_start();
 
 $uid = $_POST['uid'];
 $pass= $_POST['password'];
-$pass= $_POST['user'];
+$name= $_POST['user'];
 
 // $dbuser = getenv('CLOUDSQL_USER');
 // $dbpass = getenv('CLOUDSQL_PASSWORD');
@@ -25,7 +25,7 @@ $db = 'phpforum';
 $con = new mysqli(null, $dbuser, $dbpass, $db, null, $dbinst);
 
 
-$s = " select * from users where uid = '$uid'";
+$s = " select * from users where uid = '$uid' or name = '$name'";
 
 $result = $con->query($s);
 
@@ -34,6 +34,12 @@ $num = mysqli_num_rows($result);
 
 
 if($num > 0){
+
+
+
+
+
+
     $_SESSION['msg'] = "user exists already";
     header('location:signup.php');
 }else{

@@ -7,10 +7,10 @@ $uid = $_SESSION['uid'];
 $oldpass= $_POST['oldpassword'];
 $newpass= $_POST['newpassword'];
 
-$dbuser = getenv('CLOUDSQL_USER');
-$dbpass = getenv('CLOUDSQL_PASSWORD');
-$dbinst = getenv('CLOUDSQL_DSN');
-$db = getenv('CLOUDSQL_DB');
+// $dbuser = getenv('CLOUDSQL_USER');
+// $dbpass = getenv('CLOUDSQL_PASSWORD');
+// $dbinst = getenv('CLOUDSQL_DSN');
+// $db = getenv('CLOUDSQL_DB');
 
 $dbuser = 'root';
 $dbpass = 'dividian';

@@ -27,6 +27,7 @@ $con = new mysqli(null, $dbuser, $dbpass, $db, null, $dbinst);
  $result = $con->query($s);
  
  $num = mysqli_num_rows($result);
+ 
 
 
 if($num > 0){
