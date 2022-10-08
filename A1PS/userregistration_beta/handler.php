@@ -32,6 +32,12 @@ switch (@parse_url($_SERVER['REQUEST_URI'])['path']){
 	case '/submission.php':
 		require 'submission.php';
 		break;
+	case '/edituser.php':
+		require 'edituser.php';
+		break;
+	case '/modifyuser.php':
+		require 'modifyuser.php';
+		break;
 	default :
 		http_response_code(404);
 		echo @parse_url($_SERVER['REQUEST_URI'])['path'];

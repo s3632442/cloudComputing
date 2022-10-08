@@ -18,16 +18,18 @@ $_SESSION['msg'] = "";
         <div class="login-box">
         <div class = "row">
             <div class = "col-md-6 login-right">
-                <h2>modify User</h2>
+                <h2>Edit User</h2>
+                <h3>User ID:<?php echo $_SESSION['uid'];?></h3>
+                <h3>Username: <?php echo $_SESSION['username'];?></h3>
                 <h3><?php echo $_SESSION['msg'];?></h3>
-                <form action = "registration.php " method="post">
+                <form action = "modifyuser.php " method="post">
                     <div class="form-group">
-                        <label>ID</label>
-                        <input type="text" name="uid" class="form-control" required>
+                        <label>Old Password</label>
+                        <input type="password" name="oldpassword" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label>Password</label>
-                        <input type="password" name="password" class="form-control" required>
+                        <label>New Password</label>
+                        <input type="password" name="newpassword" class="form-control" required>
                     </div>
                     <button type="submit" class="btn btn-primary"> Register </button>
                 </form>

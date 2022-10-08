@@ -22,7 +22,7 @@ $db = 'phpforum';
 		// Create connection
 $con = new mysqli(null, $dbuser, $dbpass, $db, null, $dbinst);
  
- $s = " select * from users where uid = '$uid' and password = '$pass'";
+ $s = " select name from users where uid = '$uid' and password = '$pass'";
  
  $result = $con->query($s);
  

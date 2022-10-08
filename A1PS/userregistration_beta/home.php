@@ -22,7 +22,7 @@ $count = 0;
 
 <div class="container">
     <a class="float-right" href="logout.php">LOG OUT!</a>
-   <h1>WELCOME <a href="userpage.php"> <?php echo $_SESSION['username'];?></a> </h1>
+   <h1>WELCOME <a href="edituser.php"> <?php echo $_SESSION['username'];?></a> </h1>
    <h2>Message Board</2>
    <div class='content'>
    <?php
