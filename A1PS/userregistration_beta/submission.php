@@ -30,14 +30,16 @@ $s = "SELECT * FROM `messages`;";
         
 $result = $con->query($s);
 
-$count= $result->num_rows;
+$count = mysqli_num_rows($result);
 $count++;
 
   $s = "INSERT INTO `messages`(`uid`, `msgId`, `subject`, `message`) VALUES ('$uid','$count','$subject','$message');";
 
+  $result = $con->query($s);
+
 if ($count > $msgId) {
   
-  mysqli_query($con, $s);
+  
     $_SESSION['msg'] = "Message Posted";
     header('location:messageboard.php');
 
