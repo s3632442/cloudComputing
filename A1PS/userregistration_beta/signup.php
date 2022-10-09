@@ -34,7 +34,7 @@ $_SESSION['msg'] = "";
         // output data of each row
         echo "<table><tr><th>ID</th><th>Name</th></tr>";
         while($row = $result->fetch_assoc()) {             
-          echo "<tr><td>".$row["uid"]."</td><td>".$row["name"]." ".$row["password"]."</td></tr>";
+          echo "<tr><td>".$row["uid"]."</td><td>".$row["name"]." </td></tr>";
           
           }
           
@@ -66,6 +66,12 @@ $_SESSION['msg'] = "";
                     </div>
                     <button type="submit" class="btn btn-primary"> Register </button>
                 </form>
+                
+<form action="upload.php" method="post" enctype="multipart/form-data">
+  Select image to upload:
+  <input type="file" name="fileToUpload" id="fileToUpload">
+  <input type="submit" value="Upload Image" name="submit">
+</form>
             </div>
         </div>
     </div>
