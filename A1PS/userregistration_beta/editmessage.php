@@ -26,7 +26,7 @@ $uid = $_SESSION['uid'];
 // $db = getenv('CLOUDSQL_DB');
 
 $dbuser = 'root';
-$dbpass = 'dividian';
+$dbpass = '0Dn=oGzF1]jNPh;f';
 $dbinst = '/cloudsql/s3632442-jallybombo:us-central1:forumapp';
 $db = 'phpforum';
 if(!isset($_POST['subject'])||!isset($_POST['message'])){

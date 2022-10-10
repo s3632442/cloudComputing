@@ -27,7 +27,7 @@ $count = 0;
    <div class='content'>
    <?php
 		// Create connection
-$conn = new mysqli('localhost', 'root', 'dividian', 'phpforum');
+$conn = new mysqli('localhost', 'root', '0Dn=oGzF1]jNPh;f', 'phpforum');
 // Check connection
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);

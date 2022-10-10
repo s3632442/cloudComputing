@@ -1,25 +1,23 @@
 runtime: php74
 
 handlers:
-# Serve a directory as a static resource.
-- url: /stylesheets
-  static_dir: stylesheets
+  # Serve a directory as a static resource.
+  - url: /stylesheets
+    static_dir: stylesheets
 
+  # Serve images as static resources.
+  - url: /(.+\.(gif|png|jpg|css))$
+    static_files: \1
+    upload: .+\.(gif|png|jpg|css)$
 
-# Serve images as static resources.
-- url: /(.+\.(gif|png|jpg|css))$
-  static_files: \1
-  upload: .+\.(gif|png|jpg|css)$
+  # Serve your app through a front controller at index.php or public/index.php.
+  - url: .*
+    script: auto
 
-# Serve your app through a front controller at index.php or public/index.php.
-- url: .*
-  script: auto
-
-entrypoint: 
-  serve handler.php
+entrypoint: serve handler.php
 
 env_variables:
   CLOUDSQL_USER: root
   CLOUDSQL_DB: phpforum
-  CLOUDSQL_PASSWORD: dividian
+  CLOUDSQL_PASSWORD: 0Dn=oGzF1]jNPh;f
   CLOUDSQL_DSN: /cloudsql/s3632442-jallybombo:us-central1:forumapp

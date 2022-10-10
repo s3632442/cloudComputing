@@ -18,7 +18,7 @@ $count = $_SESSION['msgId'];;
 //  $db = getenv('CLOUDSQL_DB');
  
 $dbuser = 'root';
-$dbpass = 'dividian';
+$dbpass = '0Dn=oGzF1]jNPh;f';
 $dbinst = '/cloudsql/s3632442-jallybombo:us-central1:forumapp';
 $db = 'phpforum';
 

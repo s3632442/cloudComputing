@@ -15,7 +15,7 @@ $name= $_POST['user'];
 
 
 $dbuser = 'root';
-$dbpass = 'dividian';
+$dbpass = '0Dn=oGzF1]jNPh;f';
 $dbinst = '/cloudsql/s3632442-jallybombo:us-central1:forumapp';
 $db = 'phpforum';
 

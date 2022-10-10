@@ -14,7 +14,7 @@ $pass= $_POST['password'];
 
 
 
-$mysqli = new PDO("s3632442-jallybombo:us-central1:forumapp", "root", "dividian", "phpforum");
+$mysqli = new PDO("s3632442-jallybombo:us-central1:forumapp", "root", "0Dn=oGzF1]jNPh;f", "phpforum");
 
 if ($mysqli -> connect_errno) {
   echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
