@@ -41,6 +41,12 @@ switch (@parse_url($_SERVER['REQUEST_URI'])['path']){
 	case '/editmessage.php':
 		require 'editmessage.php';
 		break;
+	case '/loadmessage.php':
+		require 'loadmessage.php';
+		break;
+	case '/a1-p2.php.php':
+		require 'a1-p2.php';
+		break;		
 	default :
 		http_response_code(404);
 		echo @parse_url($_SERVER['REQUEST_URI'])['path'];

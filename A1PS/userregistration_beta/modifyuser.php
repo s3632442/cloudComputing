@@ -37,7 +37,7 @@ if($num == 0){
                     $s= "UPDATE `users` SET `password`= '$newpass' WHERE  `uid`= '$uid' && `password`= '$oldpass'";
                     $con->query($s);
     $_SESSION['msg'] = "password changed";
-    header('location:editUser.php');
+    header('location:edituser.php');
 }
 
 

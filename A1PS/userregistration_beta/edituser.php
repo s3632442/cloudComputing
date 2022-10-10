@@ -37,7 +37,7 @@ $uid = $_SESSION['uid'];
                         <label>New Password</label>
                         <input type="password" name="newpassword" class="form-control" required>
                     </div>
-                    <button type="submit" class="btn btn-primary"> Register </button>
+                    <button type="submit" class="btn btn-primary"> Change </button>
                 </form>
                 
 <form action="upload.php" method="post" enctype="multipart/form-data">
