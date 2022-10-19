@@ -44,7 +44,7 @@ switch (@parse_url($_SERVER['REQUEST_URI'])['path']){
 	case '/loadmessage.php':
 		require 'loadmessage.php';
 		break;
-	case '/a1-p2.php.php':
+	case '/a1-p2.php':
 		require 'a1-p2.php';
 		break;		
 	default :

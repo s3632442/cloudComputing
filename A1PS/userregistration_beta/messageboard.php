@@ -25,7 +25,7 @@ $count = 0;
     <a class="float-right" href="messageboard.php">HOME!</a>
     <a class="float-right" href="editmessage.php">EDIT MESSAGES</a>
     
-   <h1>WELCOME <a href="edituser.php"> <?php echo $_SESSION['username'];?></a> </h1><img src="https://storage.cloud.google.com/s3632442-storage/<?php echo $_SESSION['uid']?>.png" alt="userImage">
+   <h1>WELCOME <a href="edituser.php"> <?php echo $_SESSION['username'];?></a> </h1><img src="https://storage.googleapis.com/s3632442-storage/<?php echo $_SESSION['uid']?>.png" alt="userImage">
    <h2>Message Board</2>
    <div class='content'>
    <?php
