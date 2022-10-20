@@ -21,14 +21,14 @@ function App() {
           <NavLink exact activeClassName='active' to='/premium-content'>
             Premium Content
           </NavLink>
-          <div className='content'>
-            <Switch>
-              <Route exact path='/' component={Home} />
-              <Route exact path='/register' component={Register} />
-              <Route exact path='/login' component={Login} />
-              <Route exact path='/premium-content' component={PremiumContent} />
-            </Switch>
-          </div>
+        </div>
+        <div className='content'>
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route exact path='/register' component={Register} />
+            <Route exact path='/login' component={Login} />
+            <Route exact path='/premium-content' component={PremiumContent} />
+          </Switch>
         </div>
       </BrowserRouter>
     </div>
