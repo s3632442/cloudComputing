@@ -23,6 +23,8 @@ const Register = () => {
       return;
     }
 
+    setMessage(null);
+
     const requestConfig = {
       headers: {
         'x-api-key': 'yib7A74Vi12nhObY2dPkgWCbT56UQgz63QPbs7Vj',
